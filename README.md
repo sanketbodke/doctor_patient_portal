@@ -1,24 +1,48 @@
-# README
+# Doctor-Patient Portal API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Doctor-Patient management system API built with Ruby on Rails. It allows doctors to manage patient records and handle user authentication, including password resets, session management, and user registrations.
 
-Things you may want to cover:
+## Prerequisites
+Ensure you have the following installed on your system:
+* Ruby: 3.2.2
+* Rails: 7.1.4
+* PostgreSQL: The database used for production and development environments
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+Follow these steps to set up the project on your local machine.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+Ensure you have the following installed:
 
-* Database initialization
+- Ruby 3.2.2
+- Rails 7.1.4
+- PostgreSQL
 
-* How to run the test suite
+### Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/doctor_patient_portal.git
+    ```
 
-* Deployment instructions
+2. Change to the project directory:
+    ```bash
+    cd doctor_patient_portal
+    ```
 
-* ...
+3. Install the required gems:
+    ```bash
+    bundle install
+    ```
+
+4. Set up the database:
+    ```bash
+    rails db:create db:migrate
+    ```
+
+5. Run the Rails server:
+    ```bash
+    rails server
+    ```
