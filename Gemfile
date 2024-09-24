@@ -17,6 +17,7 @@ gem 'devise'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'jwt'
 gem 'rack-cors'
+gem 'sprockets-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
