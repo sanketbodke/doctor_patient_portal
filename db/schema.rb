@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_922_072_731) do
+ActiveRecord::Schema[7.1].define(version: 20_240_924_062_521) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -37,6 +37,8 @@ ActiveRecord::Schema[7.1].define(version: 20_240_922_072_731) do
     t.datetime 'updated_at', null: false
     t.string 'username'
     t.string 'role'
+    t.string 'otp_code'
+    t.datetime 'otp_generated_at'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end

@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       }
 
       resources :patients
-      resources :users
+      resources :users do
+        member do
+          put :update_password
+          put :verify_otp
+        end
+      end
 
       resources :doctors, only: [] do
         member do

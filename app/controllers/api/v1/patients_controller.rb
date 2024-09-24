@@ -7,13 +7,31 @@ module Api
 
       # GET /api/v1/patients
       def index
-        @patients = Patient.all
-        render json: { status: 'success', patients: @patients, count: Patient.count }, status: :ok
+        @patients = Patient.includes(:doctor).all
+
+        patients_data = @patients.map do |patient|
+          {
+            id: patient.id,
+            name: patient.name,
+            age: patient.age,
+            disease: patient.disease,
+            doctor: patient.doctor,
+            created_at: patient.created_at,
+            updated_at: patient.updated_at
+          }
+        end
+
+        render json: { status: 'success', patients: patients_data, count: @patients.count }, status: :ok
       end
 
       # GET /api/v1/patients/:id
       def show
-        render json: { status: 'success', patient: @patient }, status: :ok
+        doctor = @patient.doctor
+
+        render json: {
+          status: 'success',
+          patient: @patient.as_json.merge(doctor: doctor.as_json)
+        }, status: :ok
       end
 
       # POST /api/v1/patients
