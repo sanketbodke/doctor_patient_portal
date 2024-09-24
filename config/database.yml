@@ -80,5 +80,6 @@ test:
 production:
   <<: *default
   database: doctor_patient_portal_production
-  username: doctor_patient_portal
-  password: <%= ENV["DOCTOR_PATIENT_PORTAL_DATABASE_PASSWORD"] %>
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host: dpg-crpc54tds78s73d7rp0g-a.singapore-postgres.render.com
